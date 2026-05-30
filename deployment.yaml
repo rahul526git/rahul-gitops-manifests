@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: rahul-app-container
-        image: rahuldockerhub526/rahul-devops-demo:v5 # आपकी नई इमेज का वर्जन यहाँ आएगा
+        image: rahuldockerhub526/rahul-devops-demo:v9
         ports:
         - containerPort: 9090 # गो-ऐप का नया पोर्ट यहाँ आएगा
 ---
