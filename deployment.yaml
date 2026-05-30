@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: rahul-app-container
-        image: rahuldockerhub526/rahul-devops-demo:v3
+        image: rahuldockerhub526/rahul-devops-demo:v4
         ports:
         - containerPort: 80
