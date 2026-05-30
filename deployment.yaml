@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rahul-app-deployment
+  labels:
+    app: rahul-smart-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rahul-smart-app
+  template:
+    metadata:
+      labels:
+        app: rahul-smart-app
+    spec:
+      containers:
+      - name: rahul-app-container
+        image: rahuldockerhub526/rahul-devops-demo:v5 # आपकी नई इमेज का वर्जन यहाँ आएगा
+        ports:
+        - containerPort: 9090 # गो-ऐप का नया पोर्ट यहाँ आएगा
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rahul-app-service
+spec:
+  type: NodePort
+  selector:
+    app: rahul-smart-app
+  ports:
+    - port: 80         # सर्विस की बाहरी खिड़की
+      targetPort: 9090 # कंटेनर के अंदर का नया पोर्ट
+      nodePort: 30007  # इस पोर्ट पर हम ब्राउज़र में अपना ऐप लाइव देखेंगे
