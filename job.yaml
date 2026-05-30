@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rahul-app-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: rahul-app-container
+        image: rahuldockerhub526/rahul-devops-demo:v4
+      restartPolicy: Never
+  backoffLimit: 2
