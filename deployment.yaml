@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rahul-app-deployment
+  labels:
+    app: rahul-smart-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rahul-smart-app
+  template:
+    metadata:
+      labels:
+        app: rahul-smart-app
+    spec:
+      containers:
+      - name: rahul-app-container
+        image: rahuldockerhub526/rahul-devops-demo:v3
+        ports:
+        - containerPort: 80
